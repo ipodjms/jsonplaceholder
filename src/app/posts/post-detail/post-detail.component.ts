@@ -1,4 +1,8 @@
+import { PostService } from './../shared/post.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../shared/post';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-detail',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostDetailComponent implements OnInit {
 
-  constructor() { }
+  public post: Post;
+
+  constructor(private activatedRoute: ActivatedRoute, private postService: PostService) { }
 
   ngOnInit() {
+    const postId = this.getUrlsParams();
+    if (!!postId) {
+      this.postService.get(postId).subscribe(post => {
+        console.log (post);
+        this.post = post;
+      });
+    }
   }
 
+  getUrlsParams() {
+    return this.activatedRoute.snapshot.params.id;
+  }
 }

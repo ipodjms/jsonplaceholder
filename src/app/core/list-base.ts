@@ -1,7 +1,6 @@
 import { ModelBase } from './model-base';
 import { HttpService } from './http/http.service';
 import { OnInit, Injector, AfterContentInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs';
 
 
 export class ListBaseComponent<M extends ModelBase, S extends HttpService<M>> implements OnInit, OnDestroy {

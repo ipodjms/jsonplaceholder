@@ -1,1 +1,8 @@
 <p>post-list works!</p>
+
+
+<div>
+    <div *ngFor="let item of this.models">
+        <app-post [post]="item"> </app-post>
+     </div>
+</div>
