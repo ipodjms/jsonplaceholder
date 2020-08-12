@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TodoListComponent } from './todo-list/todo-list.component';
@@ -10,7 +11,7 @@ import { TodoComponent } from './todo/todo.component';
 @NgModule({
   declarations: [TodoListComponent, TodoDetailComponent, TodoComponent],
   imports: [
-    CommonModule, TodosRoutingModule
+    CommonModule, TodosRoutingModule, SharedModule
   ]
 })
 export class TodosModule { }

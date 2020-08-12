@@ -1,3 +1,16 @@
-<p>todo-detail works!</p>
-{{todo.title}} - 
-{{todo.completed}}
+<mat-card>
+    <mat-card-title>{{todo.title}}</mat-card-title>    
+    <mat-card-content>
+        <p *ngIf="todo.completed">
+            Task Done.
+        </p>
+
+        <p *ngIf="!todo.completed">
+            Task Not Complete.
+        </p>
+      </mat-card-content>
+</mat-card>
+
+
+
+

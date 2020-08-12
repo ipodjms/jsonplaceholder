@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlbumListComponent } from './album-list/album-list.component';
@@ -10,7 +11,7 @@ import { AlbumComponent } from './album/album.component';
 @NgModule({
   declarations: [AlbumListComponent, AlbumDetailsComponent, AlbumComponent],
   imports: [
-    CommonModule, AlbunsRoutingModule
+    CommonModule, AlbunsRoutingModule, SharedModule
   ]
 })
 export class AlbunsModule { }

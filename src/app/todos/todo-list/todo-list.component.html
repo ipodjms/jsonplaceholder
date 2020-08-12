@@ -1,7 +1,7 @@
-<p>todo-list works!</p>
-{{this.models.length}}
+<h1>Todo List</h1>
+
 <div>
     <div *ngFor="let item of this.models">        
-        <app-todo [currentTodo]="item"></app-todo>
+        <app-todo [currentTodo]="item" class="c-pointer "></app-todo>
      </div>
 </div>
