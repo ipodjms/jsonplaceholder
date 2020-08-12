@@ -10,7 +10,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class PostComponent implements OnInit {
 
   @Input() post: Post;
-  @Output() public readonly navigateToMovie = new EventEmitter();
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 

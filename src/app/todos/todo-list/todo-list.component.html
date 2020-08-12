@@ -1,1 +1,7 @@
 <p>todo-list works!</p>
+{{this.models.length}}
+<div>
+    <div *ngFor="let item of this.models">        
+        <app-todo [currentTodo]="item"></app-todo>
+     </div>
+</div>
