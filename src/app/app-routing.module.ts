@@ -18,6 +18,11 @@ const routes: Routes = [
     path: 'todos',
     loadChildren: () =>
       import('./todos/todos.module').then((m) => m.TodosModule)
+  },
+  {
+    path: 'fakes',
+    loadChildren: () =>
+      import('./post-fake/postfake.module').then((m) => m.PostfakeModule)
   }
 ];
 
