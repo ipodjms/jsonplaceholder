@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Post } from 'src/app/posts/shared/post';
+import { PostService } from 'src/app/posts/shared/post.service';
+import { PostFake } from '../shared/postFake';
 
 @Component({
   selector: 'app-fake-detail',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FakeDetailComponent implements OnInit {
 
-  constructor() { }
+  @Input() postFake: PostFake;
 
-  ngOnInit(): void {
+  constructor(private activatedRoute: ActivatedRoute, private postService: PostService) { }
+
+  ngOnInit() {
+    const postId = this.getUrlsParams();
+    if (!!postId) {
+      this.getPostDetail(postId);
+    }
+  }
+
+  private getUrlsParams(): string {
+    return this.activatedRoute.snapshot.params.id;
+  }
+
+  private getPostDetail(postId: string): void {
+    this.postService.get(postId).subscribe(post => {
+      console.log (post);
+      this.postFake = post;
+      console.log ('meu conteudo da internet', post);
+    });
   }
 
 }

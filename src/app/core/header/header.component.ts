@@ -30,4 +30,10 @@ constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
     });
   }
 
+    public navigateToFakes(): void {
+    this.router.navigate(['fakes'], {
+      replaceUrl: false,
+    });
+  }
+
 }
