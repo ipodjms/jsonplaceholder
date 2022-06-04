@@ -1,5 +1,5 @@
 import { AlbumService } from './../shared/album.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Album } from '../shared/album';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AlbumDetailsComponent implements OnInit {
 
-  public album: Album;
+ @Input() album: Album;
 
   constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService) { }
 

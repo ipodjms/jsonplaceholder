@@ -1,6 +1,6 @@
 import { PostService } from './../shared/post.service';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Post } from '../shared/post';
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,9 @@ import { Observable } from 'rxjs';
 })
 export class PostDetailComponent implements OnInit {
 
-  public post: Post;
+
+  @Input() post: Post;
+
 
   constructor(private activatedRoute: ActivatedRoute, private postService: PostService) { }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Todo } from '../shared/todo';
 import { ActivatedRoute } from '@angular/router';
 import { TodoService } from '../shared/todo.service';
@@ -10,7 +10,7 @@ import { TodoService } from '../shared/todo.service';
 })
 export class TodoDetailComponent implements OnInit {
 
-  public todo: Todo;
+  @Input() todo: Todo;
 
   constructor(private activatedRoute: ActivatedRoute, private todoService: TodoService) { }
 
